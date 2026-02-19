@@ -104,3 +104,34 @@ const mayoresDeEdad = edades.filter((edad) => edad >= 18);
 //   return edad >= 18;
 // });
 console.log('Mayores de edad: ', mayoresDeEdad);
+
+// Avance Lección 4:
+/* 
+- Crear funciones para las operaciones matematicas
+- Implementar una función que reciba parámetros y retorne un resultado
+- Llamar funciones dentro de otras funciones para optimizar el código
+*/
+
+const suma = (num1, num2) => `El resultado de la suma es. ${num1 + num2}`;
+const multiplicacion = (num1, num2) =>
+  `El resultado de la multiplicación es. ${num1 * num2}`;
+const division = (num1, num2) => {
+  if (num2 === 0) {
+    console.warn('No se puede dividir por 0');
+    return 'No se puede dividir por 0';
+  }
+  return `El resultado de la división es. ${num1 / num2}`;
+};
+const resta = (num1, num2) => `El resultado de la resta es. ${num1 - num2}`;
+
+const calculo = (num1, num2, operacion) => operacion(num1, num2);
+console.log(calculo(2, 0, division));
+
+// Ocupando operador rest (...) para recibir una cantidad indefinida de numeros
+const suma2 = (...numeros) =>
+  numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+const calculo2 = (operacion, ...numeros) => operacion(...numeros);
+console.log(
+  'Calculando con cantidad indefinida de numeros',
+  calculo2(suma2, 3, 4, 100, 23, 5),
+);
