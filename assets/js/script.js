@@ -135,3 +135,52 @@ console.log(
   'Calculando con cantidad indefinida de numeros',
   calculo2(suma2, 3, 4, 100, 23, 5),
 );
+
+// Avance Lección 5:
+/* 
+- Crear un objeto con propiedades y valores
+- Implementar métodos dentro de un objeto
+- Usar un arreglo de objetos y recorrerlo con map o forEach
+*/
+
+const mascota = {
+  nombre: 'Ron',
+  especie: 'Gato',
+  edad: 11,
+  // Método ↓
+  hablar: function () {
+    return `${this.nombre} maúlla`;
+  },
+};
+
+console.log(mascota.hablar());
+
+const animales = [
+  {
+    nombre: 'Leon',
+    edad: 7,
+  },
+  {
+    nombre: 'Jirafa',
+    edad: 1,
+  },
+  {
+    nombre: 'Elefante',
+    edad: 22,
+  },
+];
+
+// forEach no devuelve nada
+animales.forEach((animal) =>
+  console.log(`${animal.nombre} tiene ${animal.edad} año/s`),
+);
+
+// map devuelve un nuevo array
+const animalesConZoo = animales.map((animal) => {
+  const nuevo = {
+    ...animal,
+    zoo: 'Front Zoo',
+  };
+  return nuevo;
+});
+console.log(animalesConZoo);
