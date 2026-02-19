@@ -24,11 +24,14 @@ console.log(
 // parrafo.textContent = 'Contenido del párrafo cambiado con JS';
 
 // Avance Lección 2:
-let numero1 = parseInt(prompt('Escriba un número'));
-let numero2 = parseInt(prompt('Escriba otro número'));
-let operacion = prompt(
-  'Escriba una operacion: suma, resta, multiplicación o división',
-).toLowerCase();
+// let numero1 = parseInt(prompt('Escriba un número'));
+let numero1 = 2;
+// let numero2 = parseInt(prompt('Escriba otro número'));
+let numero2 = 2;
+// let operacion = prompt(
+//   'Escriba una operacion: suma, resta, multiplicación o división',
+// ).toLowerCase();
+let operacion = 'suma';
 
 let resultado;
 
@@ -71,3 +74,33 @@ if (
 }
 
 // Avance Leccion 3:
+/* 
+
+○  Crear un arreglo con una lista de elementos. 
+○  Usar for y while para recorrer arreglos
+- Implementar una función que filtre elementos según una condición
+*/
+
+const edades = [23, 44, 13, 8, 3, 25, 77, 11, 32];
+
+// Recorrer arreglo con for
+console.log('--- Recorrer con for ---');
+console.log(edades);
+for (let i = 0; i < edades.length; i++) {
+  console.log(`Índice ${i} en arreglo "edades": ${edades[i]}`);
+}
+
+// Recorrer arreglo con while
+console.log('--- Recorrer con while ---');
+
+let iterador = 0;
+while (iterador < edades.length) {
+  console.log(`Índice ${iterador} en arreglo "edades": ${edades[iterador]}`);
+  iterador++;
+}
+
+const mayoresDeEdad = edades.filter((edad) => edad >= 18);
+// const mayoresDeEdad = edades.filter(function (edad) {
+//   return edad >= 18;
+// });
+console.log('Mayores de edad: ', mayoresDeEdad);
